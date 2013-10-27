@@ -4,47 +4,33 @@
     <title>{{title}}</title>
     <meta charset="{{encoding}}">
     <meta name="viewport" content="width=792, user-scalable=no">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
 
-    <!--
-        This working incorrectly because Cleaver add its own styles,
-        in my case Cleaver styles conflicts with custom theme styles.
-        -->
-        <!-- 
-        <style>
-            {{{style}}}
-            {{{externalStyle}}}
-        </style>
-        -->
-
-    <!-- This is working (indentically to style.css)-->
-        <link rel="stylesheet" href="http://shwr.me/shower/themes/ribbon/styles/screen.css">
+    <style>
+        {{{style}}}
+        {{{externalStyle}}}
+    </style>
 
 </head>
 <body class="list">
 
     <header class="caption">
         <h1>{{title}}</h1>
-        <!--
-            {{author.url}} and {{author.name}} accessible from author's slide
-            but in custom theme is can be required in any place
-        -->
-        <!-- 
-            Also themes can has own design requirements and it's be usefull
-            to give freedom of passing any defined in md-file variables to theme scope.
-        -->
-            <p><a href="{{author.url}}">{{author.name}}</a>, {{company}}</p>
+        <p><a href="{{author.url}}">{{author.name}}</a>, {{custom.company}}</p>
     </header>
 
     {{{slideshow}}}
 
     <div class="progress"><div></div></div>
+    
     <!--
         Custom themes also can require custom JavaScript
+        so maybe {{navigation}} should be renamed to {{JavaScript}} ?
     -->
-    
+
     <script src="http://rawgithub.com/shower/shower/master/shower.min.js"></script>
 </body>
 </html>
+
+<!-- Also whereis author.mustache? -->
